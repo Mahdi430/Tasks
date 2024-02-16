@@ -1,0 +1,33 @@
+.task-list {
+   width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom:1px solid #e7dfdf;
+    border-radius: 4px;
+    background-color: #e5ebe6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+  }
+
+
+  app-component-a,
+  app-component-b {
+    margin-right: 10px;  /* Optional: Add margin between components */
+  }
+  
+  .task {
+    border: 1px solid #140a0a;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+  }
+  
+  .task-title {
+    font-weight: bold;
+  }
+  
+  /* .task-due-date ,task{
+    color: #31b118;
+  } */
+  

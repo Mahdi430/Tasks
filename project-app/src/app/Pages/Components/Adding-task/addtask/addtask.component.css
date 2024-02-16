@@ -1,0 +1,59 @@
+.add-task-form {
+    width: 500px;
+    
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-bottom: 1px ;
+    border-radius: 2%;
+    background-color: #5bb848;
+    margin-left: 34%;
+    margin-top: 4%;
+    
+}
+
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color:whitesmoke;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color:#110e0e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    
+  }
+  
+  button:hover {
+    background-color:rgb(17, 16, 16);
+    color:white;
+  }
+  
+  /* Optional: Style the date input */
+  input[type="date"] {
+    padding: 8px;
+  }
+  
+  /* Optional: Style form errors */
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  

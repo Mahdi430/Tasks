@@ -1,0 +1,16 @@
+
+<div class="add-task-form">
+  <label for="id">id:</label>
+  <input type="number" id="id" [(ngModel)]="newTask.id"  />
+
+    <label for="title">Title:</label>
+    <input  id="title" [(ngModel)]="newTask.title" >
+  
+    <label for="description">Description:</label>
+    <textarea id="description" [(ngModel)]="newTask.description"></textarea>
+  
+    <label for="dueDate">Due Date:</label>
+    <input id="dueDate" type="date" [(ngModel)]="newTask.dueDate">
+  
+    <button (click)="onAddTask()" >Add Task</button>
+  </div>

@@ -1,0 +1,19 @@
+<!-- <div *ngIf="isLoading" style="text-align:center;">
+  <app-loadedspiner></app-loadedspiner>
+</div> -->
+<span class="task-list" *ngFor="let id of id">
+  
+    <h2>{{ id }}</h2>
+    <div class="task" *ngFor="let task of tasksById(id)">
+      <div class="task-title">{{ task.title }}</div>
+      <div class="task-description">{{ task.description }}</div>
+      <div class="task-due-date"   [style.color]="date1(task.dueDate)>currentDate?'red':'green'" >
+        Due Date: {{ task.dueDate | date }}
+      
+      </div>
+      
+
+    
+    </div>
+    <div style="margin-top: 2%;"><button mat-raised-button  color="warn" (click)="Deletetask(id)">X</button></div>
+</span> 
