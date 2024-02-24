@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { AddtaskComponent } from './Pages/Components/Adding-task/addtask/addtask.component';
+import { AddtaskComponent } from './Pages/Components/Adding-task/addtask.component';
+
 
 @Component({
   selector: 'app-root',

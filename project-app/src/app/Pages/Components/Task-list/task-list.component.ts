@@ -1,34 +1,33 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Task } from '../../TaskInterface/task.model';
+import { Task } from '../TaskInterface/task.model';
 import { CommonModule, DatePipe } from '@angular/common';
-import { StoragetasksService } from '../../../Services/storage/storagetasks.service';
-import { LoadedspinerComponent } from '../../loadedspiner/loadedspiner.component';
+import { StoragetasksService } from '../../Services/storage/storagetasks.service';
+
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-list',
   standalone: true,
-  imports: [CommonModule, LoadedspinerComponent, MatButtonModule],
+  imports: [CommonModule, MatButtonModule],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.css',
 })
 export class TaskListComponent implements OnInit {
   tasks: Task[] = [];
-  currentDate:String=new Date().toLocaleDateString();
- 
+  Editemode=false;
 
   constructor(
     private storageservice: StoragetasksService,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) {}
-  
+
   get id(): number[] {
     return Array.from(new Set(this.tasks?.map((task) => task.id)));
   }
-  date1(date:Date):String{
-   return date.toLocaleString();
-  }
+
   ngOnInit(): void {
     this.storageservice.tasksUsingSubject$.subscribe((tasks: Task[]) => {
       if (tasks) {
@@ -37,7 +36,7 @@ export class TaskListComponent implements OnInit {
     });
 
     this.storageservice.fetchUsingObservables();
-   console.log(this.currentDate);
+  
   }
 
   tasksById(id: number): Task[] {
@@ -47,5 +46,13 @@ export class TaskListComponent implements OnInit {
     this.tasks = this.tasks.filter((task) => task.id !== id);
     this.storageservice.Savevlaues(this.tasks);
     this.storageservice.Updatetasks(this.tasks);
+  }
+  Edittask(id:number){
+ 
+   this.Editemode=!this.Editemode;
+   if(this.Editemode){
+    this.router.navigate(['Edittask']);
+    
+   }
   }
 }

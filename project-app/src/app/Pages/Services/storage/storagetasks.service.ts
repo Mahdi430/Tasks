@@ -3,6 +3,7 @@ import { Injectable, NgModule, computed, signal } from '@angular/core';
 
 import { Observable, ReplaySubject, Subject, concatAll } from 'rxjs';
 import { Task } from '../../Components/TaskInterface/task.model';
+import { EdittaskComponent } from '../../Components/Edittask/Edittask.component';
 
 @Injectable({
   providedIn: 'root',
@@ -56,12 +57,32 @@ export class StoragetasksService {
     ) {
       this.tasks.push({ ...newTask });
       this.Updatetasks(this.tasks);
-    } else {
-      alert('Error in inputs');
+    } else if( newTask.title.trim() === '') {
+      console.log('trim')
+      // alert('Error in inputs');
+    }
+    else if(newTask.description?.trim() === ''){
+      console.log('trim2')
+    }
+    else if(  newTask.id === 0){
+      console.log('id=0')
+    }
+    else if(newTask.id !== this.tasks.length + 1){
+      console.log('length')
+    }
+    else{
+      console.log('none')
     }
     newTask.id = 0;
     newTask.description = '';
     newTask.title = '';
     newTask.dueDate = new Date();
   }
+  edittask:Task={
+    id: 0,
+    title: '',
+    description:'',
+    dueDate: new Date()
+  }
+ 
 }

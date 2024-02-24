@@ -1,0 +1,16 @@
+<span class="task-list" *ngFor="let id of id">
+  
+  <h2 class="task-id">{{ id }}</h2>
+  <div class="task" *ngFor="let task of tasksById(id)">
+    <div class="task-title">{{ task.title }}</div>
+    <div class="task-description">{{ task.description }}</div>
+    <div class="task-due-date"  >
+      Due Date: {{ task.dueDate | date }}
+    
+    </div>
+  </div>
+  <div style="margin-top: 2%">
+    <button mat-raised-button color="primary" (click)="Edittask(1)">Edit</button>
+    <button mat-raised-button color="warn" (click)="Deletetask(id)">X</button>
+  </div>
+</span>

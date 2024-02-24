@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../../header/header.component';
-import { TaskListComponent } from '../../../Pages/Components/Task-list/task-list/task-list.component';
+
+import { TaskListComponent } from '../../Pages/Components/Task-list/task-list.component';
+import { HeaderComponent } from '../header/header.component';
+
 
 
 @Component({

@@ -1,5 +1,7 @@
 .task-list {
-   width: 100%;
+ 
+  
+  width: 100%;
     display: flex;
     justify-content: space-around;
     border-bottom:1px solid #e7dfdf;
@@ -21,13 +23,18 @@
     padding: 10px;
     margin: 10px;
     width: 200px;
+    overflow: hidden;
+    word-wrap: break-word; 
+  }
+  .task-id{
+    font-size:x-large;font-weight: bold; margin:40px
   }
   
   .task-title {
     font-weight: bold;
   }
   
-  /* .task-due-date ,task{
+  .task-due-date ,task{
     color: #31b118;
-  } */
+  }
   
