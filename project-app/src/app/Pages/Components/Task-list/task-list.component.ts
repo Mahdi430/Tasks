@@ -17,7 +17,7 @@ import {MatDialog, MatDialogModule, MatDialogRef} from '@angular/material/dialog
 export class TaskListComponent implements OnInit {
   task!: Task;
   tasks: Task[] = [];
-  Editemode=false;
+ 
 
   constructor(
     private storageservice: StoragetasksService,
@@ -53,8 +53,8 @@ export class TaskListComponent implements OnInit {
   }
   Edittask(id: number){
     const taskToEdit = this.tasks.find(task => task.id === id);
-     this.Editemode=!this.Editemode;
-    if (taskToEdit && this.Editemode) {
+   
+    if (taskToEdit) {
       console.log('Task to edit:', taskToEdit);
       this.popup.open(EditTaskComponent, {
         data: { task: taskToEdit }
