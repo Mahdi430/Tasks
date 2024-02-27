@@ -1,13 +1,29 @@
+<div *ngIf="task" class="edit-form-container">
+  <h2 class="edit-form-title">Edit Task</h2>
+  <form [formGroup]="taskForm" (ngSubmit)="saveTaskChanges()" class="edit-form">
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>ID</mat-label>
+      <input matInput [value]="task.id" disabled>
+    </mat-form-field>
 
-<mat-form-field>
-    <mat-label>id</mat-label>
-    <input matInput type ="number" [(ngModel)]="task.id">
-  </mat-form-field><br>
-  <mat-form-field>
-    <mat-label>title</mat-label>
-    <input matInput type ="text">
-  </mat-form-field><br>
-  <mat-form-field>
-    <mat-label>description</mat-label>
-    <textarea matInput ></textarea>
-  </mat-form-field>
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Due Date</mat-label>
+      <input matInput type="date" formControlName="dueDate">
+    </mat-form-field>
+
+    <div class="form-actions">
+      <button type="submit" class="save-button">Save</button>
+      <button type="button" (click)="cancelEdit()" class="cancel-button">Cancel</button>
+    </div>
+  </form>
+</div>

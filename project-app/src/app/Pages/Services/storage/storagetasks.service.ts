@@ -1,9 +1,9 @@
 import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
 import { Injectable, NgModule, computed, signal } from '@angular/core';
 
-import { Observable, ReplaySubject, Subject, concatAll } from 'rxjs';
+import { ReplaySubject, } from 'rxjs';
 import { Task } from '../../Components/TaskInterface/task.model';
-import { EdittaskComponent } from '../../Components/Edittask/Edittask.component';
+
 
 @Injectable({
   providedIn: 'root',
@@ -59,30 +59,35 @@ export class StoragetasksService {
       this.Updatetasks(this.tasks);
     } else if( newTask.title.trim() === '') {
       console.log('trim')
+      alert('error in title');
       // alert('Error in inputs');
+      newTask.title = '';
     }
     else if(newTask.description?.trim() === ''){
-      console.log('trim2')
+      console.log('trim2');
+      alert('error in descripton');
+      newTask.description = '';
+      
     }
     else if(  newTask.id === 0){
-      console.log('id=0')
+      newTask.id = 0;
+      console.log('id=0');
+      alert('error cannot be 0');
+      
+      
     }
     else if(newTask.id !== this.tasks.length + 1){
-      console.log('length')
+      console.log('length');
+      alert('error in id');
     }
     else{
       console.log('none')
     }
-    newTask.id = 0;
-    newTask.description = '';
-    newTask.title = '';
-    newTask.dueDate = new Date();
+   
+  
+    
+    
   }
-  edittask:Task={
-    id: 0,
-    title: '',
-    description:'',
-    dueDate: new Date()
-  }
+
  
 }

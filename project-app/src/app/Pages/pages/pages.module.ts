@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { TaskListComponent } from '../Components/Task-list/task-list.component';
 import { AddtaskComponent } from '../Components/Adding-task/addtask.component';
-import { EdittaskComponent } from '../Components/Edittask/Edittask.component';
+import { EditTaskComponent } from '../Components/Edittask/Edittask.component';
 
 
 export const routes: Routes = [
@@ -25,7 +25,7 @@ export const routes: Routes = [
       },
       {
         path:'Edittask',
-        component:EdittaskComponent
+        component:EditTaskComponent
       }
     ],
   },
