@@ -3,4 +3,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 html, body { height: 100%; }
+::-webkit-scrollbar{
+    display: none;
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

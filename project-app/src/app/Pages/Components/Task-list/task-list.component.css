@@ -1,13 +1,16 @@
 .task-list {
  
-  
+    
+
+
+
   width: 100%;
     display: flex;
     justify-content: space-around;
     border-bottom:1px solid #e7dfdf;
     border-radius: 4px;
     background-color: #e5ebe6;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
    
   }
 
@@ -37,4 +40,42 @@
   .task-due-date ,task{
     color: #31b118;
   }
+
+  .loader {
+    margin-right: 1%;
+    width: 48px;
+    height: 48px;
+    border: 8px dotted #118f45;
+    border-radius: 100%;
+
+   
+    box-sizing: border-box;
+    animation: rotation 2s linear infinite;
+   
+
+    
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+  .loading{
+    width: 13px;
+    margin-top: 4%;
+     font-size: large;
+    position: absolute;
+    color: #118f45;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

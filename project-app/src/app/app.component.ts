@@ -11,4 +11,6 @@ import { AddtaskComponent } from './Pages/Components/Adding-task/addtask.compone
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {}
+export class AppComponent {
+  [x: string]: any;
+}

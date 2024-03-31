@@ -29,7 +29,7 @@ export class AddtaskComponent implements OnInit {
   ngOnInit(): void {}
   
   onAddTask() {
-    console.log(this.newTask);
+    // console.log(this.newTask);
     this.storageservice.onAddTask(this.newTask);
   }
 }

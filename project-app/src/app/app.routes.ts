@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './Layout/Layoutcomponent/layout.component';
+import { Injectable } from '@angular/core';
 
 
 export const routes: Routes = [

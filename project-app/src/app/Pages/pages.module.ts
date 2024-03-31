@@ -5,7 +5,6 @@ import { TaskListComponent } from './Components/Task-list/task-list.component';
 import { AddtaskComponent } from './Components/Adding-task/addtask.component';
 import { EditTaskComponent } from './Components/Edittask/Edittask.component';
 
-
 export const routes: Routes = [
   {
     path: '',
@@ -24,9 +23,9 @@ export const routes: Routes = [
         component: AddtaskComponent,
       },
       {
-        path:'Edittask',
-        component:EditTaskComponent
-      }
+        path: 'Edittask',
+        component: EditTaskComponent,
+      },
     ],
   },
 ];
